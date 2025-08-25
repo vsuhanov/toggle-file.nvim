@@ -10,9 +10,7 @@ function M.remember_file(filepath)
     filepath = vim.api.nvim_buf_get_name(0)
   end
 
-  print(filepath)
   local absolute_path = vim.fn.fnamemodify(filepath, ':p')
-  print(absolute_path)
   local remember_file = data_path .. '/remembered-file-path'
 
   local file = io.open(remember_file, 'w')
